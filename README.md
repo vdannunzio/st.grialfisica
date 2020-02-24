@@ -1,2 +1,0 @@
-# st.grialfisica
-Física algebraica
