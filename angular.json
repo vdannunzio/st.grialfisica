@@ -140,5 +140,8 @@
       }
     }
   },
-  "defaultProject": "st-grial"
+  "defaultProject": "st-grial",
+  "cli": {
+    "analytics": false
+  }
 }
