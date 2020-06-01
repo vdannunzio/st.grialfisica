@@ -1,0 +1,19 @@
+@import 'functions';
+
+footer {
+  display: flex;
+  justify-content: center;
+
+  background-color: get-color('darkest');
+
+  padding: 0.25rem;
+  width: 100%;
+
+  p {
+    color: get-color('white');
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+  }
+}
