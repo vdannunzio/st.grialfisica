@@ -1,0 +1,6 @@
+@import '../variables/colors';
+
+// Return a color from palette by name
+@function get-color($color, $color-map: $theme-colors) {
+  @return map-get($color-map, $color);
+}
