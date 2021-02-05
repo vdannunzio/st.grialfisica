@@ -1,16 +1,20 @@
-import { Component, OnInit } from "@angular/core";
+import { AfterViewInit, Component } from "@angular/core";
 import { Paper } from "@interfaces/paper";
-import { papers } from "./data";
+import { PaperService } from "src/app/services/papers.service";
 
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.scss"],
 })
-export class HomeComponent implements OnInit {
-  public papers: Array<Paper> = papers;
+export class HomeComponent implements AfterViewInit {
+  papers: Paper[];
 
-  constructor() {}
+  constructor(private readonly paperService: PaperService) {}
 
-  ngOnInit(): void {}
+  ngAfterViewInit(): void {
+    this.paperService.getAll().subscribe((papers: Paper[]) => {
+      this.papers = papers;
+    });
+  }
 }
