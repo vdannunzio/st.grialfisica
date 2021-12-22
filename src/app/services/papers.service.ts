@@ -11,7 +11,10 @@ export class PaperService {
   private url = "/assets/papers/papers.json";
 
   getAll(): Observable<Paper[]> {
-    return this.http.get<{ papers: Paper[] }>(this.url).pipe(
+    const timeStamp = new Date().getTime();
+    const url = `${this.url}?t=${timeStamp}`;
+
+    return this.http.get<{ papers: Paper[] }>(url).pipe(
       map((data) => data.papers),
       catchError(() => of([]))
     );
